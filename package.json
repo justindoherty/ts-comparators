@@ -6,6 +6,7 @@
   "typings": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
+    "clean": "rimraf dist",
     "test": "karma start"
   },
   "repository": {
@@ -26,6 +27,7 @@
   "devDependencies": {
     "@types/jasmine": "2.5.40",
     "jasmine": "2.5.2",
+    "rimraf": "2.5.4",
     "typescript": "~2.1.4"
   }
 }
