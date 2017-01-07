@@ -24,6 +24,8 @@
   },
   "homepage": "https://github.com/justindoherty/ts-comparators#readme",
   "devDependencies": {
+    "@types/jasmine": "2.5.40",
+    "jasmine": "2.5.2",
     "typescript": "~2.1.4"
   }
 }
