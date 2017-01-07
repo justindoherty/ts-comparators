@@ -1,0 +1,24 @@
+{
+  "name": "ts-comparators",
+  "version": "0.0.1",
+  "description": "A set of comparators written in TypeScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "karma start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/justindoherty/ts-comparators.git"
+  },
+  "keywords": [
+    "typescript",
+    "comparator",
+    "comparators"
+  ],
+  "author": "Justin Doherty",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/justindoherty/ts-comparators/issues"
+  },
+  "homepage": "https://github.com/justindoherty/ts-comparators#readme"
+}
