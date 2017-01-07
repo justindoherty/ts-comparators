@@ -25,9 +25,13 @@
   },
   "homepage": "https://github.com/justindoherty/ts-comparators#readme",
   "devDependencies": {
-    "@types/jasmine": "2.5.40",
-    "jasmine": "2.5.2",
-    "rimraf": "2.5.4",
-    "typescript": "~2.1.4"
+    "@types/jasmine": "^2.5.40",
+    "jasmine": "^2.5.2",
+    "karma": "^1.3.0",
+    "karma-jasmine": "^1.1.0",
+    "karma-phantomjs-launcher": "^1.0.2",
+    "karma-typescript": "^2.1.5",
+    "rimraf": "^2.5.4",
+    "typescript": "^2.1.4"
   }
 }

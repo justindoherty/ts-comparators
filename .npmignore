@@ -4,3 +4,4 @@ tsconfig.json
 *.spec.js
 *.spec.js.map
 *.spec.d.ts
+coverage
