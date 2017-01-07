@@ -2,8 +2,10 @@
   "name": "ts-comparators",
   "version": "0.0.1",
   "description": "A set of comparators written in TypeScript",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "scripts": {
+    "build": "tsc",
     "test": "karma start"
   },
   "repository": {
@@ -20,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/justindoherty/ts-comparators/issues"
   },
-  "homepage": "https://github.com/justindoherty/ts-comparators#readme"
+  "homepage": "https://github.com/justindoherty/ts-comparators#readme",
+  "devDependencies": {
+    "typescript": "~2.1.4"
+  }
 }
