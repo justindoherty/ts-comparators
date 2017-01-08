@@ -7,7 +7,8 @@
   "scripts": {
     "build": "tsc",
     "clean": "rimraf dist",
-    "test": "karma start"
+    "test": "karma start",
+    "tslint": "tslint \"src/**/*.ts\""
   },
   "repository": {
     "type": "git",
@@ -32,6 +33,7 @@
     "karma-phantomjs-launcher": "^1.0.2",
     "karma-typescript": "^2.1.5",
     "rimraf": "^2.5.4",
+    "tslint": "^4.3.1",
     "typescript": "^2.1.4"
   }
 }

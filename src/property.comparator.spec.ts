@@ -3,8 +3,8 @@ import { PropertyComparator } from './property.comparator';
 
 type Value = { prop: any };
 type Property = {};
-const prop1: Property = {}, prop2: Property = {}
-const value1: Value = { prop: prop1 }, value2: Value = { prop: prop2 }
+const prop1: Property = {}, prop2: Property = {};
+const value1: Value = { prop: prop1 }, value2: Value = { prop: prop2 };
 const result = {};
 
 describe(`Comparator: ${PropertyComparator.name}`, () => {
