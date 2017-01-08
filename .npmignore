@@ -1,7 +1,12 @@
 node_modules/
 
-tsconfig.json
+/tsconfig.json
 *.spec.js
 *.spec.js.map
 *.spec.d.ts
-coverage
+/coverage/
+/ts-comparators-*.tgz
+/package*/
+.npmignore
+karma.conf.js
+tslint.json

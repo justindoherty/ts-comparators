@@ -1,6 +1,7 @@
-node_modules
+node_modules/
 *.js
 *.js.map
-ts-comparators-0.0.1.tgz
-dist
-coverage
+ts-comparators-*.tgz
+dist/
+coverage/
+/package*/
