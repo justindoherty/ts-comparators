@@ -1,17 +1,17 @@
 import { Comparator } from './comparator';
-import { ModelComparator } from './model.comparator';
+import { ValueComparator } from './value.comparator';
 
 const value1 = {}, value2 = {}, newValue1 = {}, newValue2 = {}, result = {};
 
-describe(`Comparator: ${ModelComparator.name}`, () => {
-    let comparator: ModelComparator<any, any>;
+describe(`Comparator: ${ValueComparator.name}`, () => {
+    let comparator: ValueComparator<any, any>;
     let getterSpy: jasmine.Spy;
     let compareSpy: jasmine.Spy;
 
     beforeEach(() => {
         getterSpy = jasmine.createSpy('getter');
         compareSpy = jasmine.createSpy('compare');
-        comparator = new ModelComparator(getterSpy, { compare: compareSpy } as any);
+        comparator = new ValueComparator(getterSpy, { compare: compareSpy } as any);
     });
 
     it('calls getter with correct values', () => {
