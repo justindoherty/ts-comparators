@@ -72,7 +72,10 @@ module.exports = function (config) {
       },
       reports: {
         'text-summary': '',
-        'lcovonly': './coverage/lcov'
+        'lcovonly': {
+            "directory": "coverage",
+            "filename": "lcov/coverage.lcov"
+        }
       }
     }
   })
