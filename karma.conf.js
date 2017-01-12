@@ -69,6 +69,10 @@ module.exports = function (config) {
       tsconfig: './tsconfig.json',
       compilerOptions: {
         target: 'es5'
+      },
+      reports: {
+        'text-summary': '',
+        'lcovonly': './coverage/coverage.lcov'
       }
     }
   })
