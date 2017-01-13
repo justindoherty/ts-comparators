@@ -8,7 +8,14 @@ This is a comparators package written in typscript
 
 ## Comparators
 ### `BasicComparator`
-`BasicComparator`
+The `BasicComparator` is the simplest of all the comparators and doesn't do anything special except that it can be used internally by other comparators and possesses the `ChainableComparator` functionality.
+
+```typescript
+let values = [3, 2, 1];
+let comparator = new BasicComparator<number>();
+values.sort((value1, value2) => comparator.compare(value1, value2));
+// values = [1, 2, 3]
+```
 
 ### `ChainableComparator`
 `ChainableComparator`
