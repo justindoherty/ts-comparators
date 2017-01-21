@@ -1,10 +1,45 @@
 # ts-comparators
-This is a comparators package written in typscript
+This is a comparators package written in TypeScript
 
 [![Build Status](https://travis-ci.org/justindoherty/ts-comparators.svg?branch=master)](https://travis-ci.org/justindoherty/ts-comparators)
 [![dependencies Status](https://david-dm.org/justindoherty/ts-comparators/status.svg)](https://david-dm.org/justindoherty/ts-comparators)
 [![devDependencies Status](https://david-dm.org/justindoherty/ts-comparators/dev-status.svg)](https://david-dm.org/justindoherty/ts-comparators?type=dev)
 [![codecov](https://codecov.io/gh/justindoherty/ts-comparators/branch/master/graph/badge.svg)](https://codecov.io/gh/justindoherty/ts-comparators)
+
+## Usage
+### Reversing
+Reversing a comparator is as simple as calling its `reverse` method. The `reverse` method will return a new `ChainableComparator` that does the same thing as the original one in the reverse order.
+
+```typescript
+let values = [2, 3, 1];
+let comparator = new BasicComparator<number>().reverse();
+values.sort((value1, value2) => comparator.compare(value1, value2));
+// values = [3, 2, 1]
+```
+
+### Chaining
+Chaining comparators is what makes this package really powerful. You can combine multiple comparators to create subsorts in an efficient manner.
+
+```typescript
+interface Obj {
+    prop1: number,
+    prop2: string
+}
+let values = [
+    { prop1: 1, prop2: 'xylophone' },
+    { prop1: 1, prop2: 'baseball' },
+    { prop1: 2, prop2: 'hello' }
+];
+let comparator = new PropertyComparator<Obj, 'prop1'>('prop1', new BasicComparator<number>())
+    .reverse()
+    .then(new ValueComparator<Obj, string>(obj => obj.prop2, new StringComparator()));
+values.sort((value1, value2) => comparator.compare(value1, value2));
+//values = [,
+//    { prop1: 2, prop2: 'hello' },
+//    { prop1: 1, prop2: 'baseball' },
+//    { prop1: 1, prop2: 'xylophone' }
+//];
+```
 
 ## Comparators
 ### `ChainableComparator`
@@ -64,38 +99,4 @@ let values = [2, 3, 1];
 let comparator = new CustomComparator<number>((value1, value2) => value1 - value2);
 values.sort((value1, value2) => comparator.compare(value1, value2));
 // values = [1, 2, 3]
-```
-
-## Reversing
-Reversing a comparator is as simple as calling its `reverse` method. The `reverse` method will return a new `ChainableComparator` that does the same thing as the original one in the reverse order.
-
-```typescript
-let values = [2, 3, 1];
-let comparator = new BasicComparator<number>().reverse();
-values.sort((value1, value2) => comparator.compare(value1, value2));
-// values = [3, 2, 1]
-```
-
-## Chaining
-Chaining comparators is what makes this package really powerful. You can combine multiple comparators to create subsorts in an efficient manner.
-
-```typescript
-interface Obj {
-    prop1: number,
-    prop2: string
-}
-let values = [
-    { prop1: 1, prop2: 'xylophone' },
-    { prop1: 1, prop2: 'baseball' },
-    { prop1: 2, prop2: 'hello' }
-];
-let comparator = new PropertyComparator<Obj, 'prop1'>('prop1', new BasicComparator<number>())
-    .reverse()
-    .then(new ValueComparator<Obj, string>(obj => obj.prop2, new StringComparator()));
-values.sort((value1, value2) => comparator.compare(value1, value2));
-//values = [,
-//    { prop1: 2, prop2: 'hello' },
-//    { prop1: 1, prop2: 'baseball' },
-//    { prop1: 1, prop2: 'xylophone' }
-//];
 ```
